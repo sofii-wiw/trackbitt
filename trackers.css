@@ -1,0 +1,991 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');    
+
+*{  
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-transform: lowercase;
+}
+
+:root, html[data-theme="pink"] {
+body {
+    cursor: url('../assets/cursor1.gif'), auto;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background-image: url(https://i.pinimg.com/originals/d5/92/83/d5928332b517070db3ebcb92149cf40b.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #5a3a45;
+    min-height: 100vh;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+    max-width: fit-content;
+    padding: 35px 20px 20px;
+}
+
+.go-back{
+    margin-left: 15%;
+    font-size: 15px;
+    color: #ffb3d0;
+    background-image: url(https://poempuppy.neocities.org/resources/pixels/laidey.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+    border-radius: 20px;
+    align-items: start;
+}
+
+.ht {
+    font-size: 42px;
+    color: #ED4E6E;
+    padding: 20px;
+    margin: auto;
+    border: solid, 4px;
+    border-radius: 30px;
+    background-color: rgb(255, 201, 212);
+}
+
+#habit-list h2{
+    color: #ffdbe5;
+    text-shadow: 5px 0 10px#ff4583;
+    margin: 5px;
+    padding: 20px;
+    border: #ff6b93, solid, .5vh;
+    border-radius: 20px;
+    background-image: linear-gradient(180deg, #ffbbcd, #ff7ca4, #ffbbcd);
+    max-width: 200vh;
+    max-height: 100vh;
+    font-size: xx-large;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(180, 80, 110, 0.12);
+}
+
+main {
+    width: 95%;
+    max-width: 100%;
+    margin: auto;
+}
+
+#adds{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 15px; 
+    box-shadow: 0 8px 25px rgba(180, 80, 110, 0.12);
+    width: 45%;
+}
+
+#filter-category {
+    display: block;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+    padding: 10px;
+    margin: 10px;
+    font-size: 17px;
+    color: #ffe7e6;
+    font-weight: bold;
+    background-color: #ec0056;
+    border: 2px, #ff7f7f;
+}
+
+#habit-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+    background: transparent;
+    box-shadow: 0 0 3px(darkred);
+    padding: 10px 0;
+    width: 100%;
+}
+
+.habit {
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #fff5f8);
+    border: 2px solid #f6c1d0;
+    border-radius: 22px;
+    padding: 22px;
+    margin: 10px;
+    min-height: 230px;
+    box-shadow: 0 8px 20px rgba(205, 90, 120, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.habit:hover {
+    transform: translateY(-6px);
+    border-color: #e98aa5;
+    box-shadow: 0 15px 30px rgba(205, 90, 120, 0.22);
+}
+
+
+.habit h3 {
+    margin: 0 0 15px;
+    font-size: 21px;
+    color: #c64f71;
+    text-transform: capitalize;
+    line-height: 1.4;
+}
+
+
+.badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 5px 9px;
+    background: #ffdae5;
+    color: #d44770;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(210, 70, 110, 0.15);
+}
+
+
+
+.progress {
+    width: 100%;
+    height: 13px;
+    background: #f8dce5;
+    border-radius: 20px;
+    margin: 15px 0 20px;
+}
+
+.progress-bar {
+    display: block;
+    height: 50%;
+    background: linear-gradient(90deg,#ff7f9f, #ffabc0);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+
+.habit button {
+    border: none;
+    border-radius: 10px;
+    padding: 9px 13px;
+    margin: 4px 3px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+    transition: 0.2s ease;
+}
+
+
+.complete-btn {
+    background: #ff8fab;
+    color: white;
+}
+
+.complete-btn:hover {
+    background: #f36f94;
+    transform: scale(1.04);
+}
+
+
+.edit-btn {
+    background: #ffd3df;
+    color: #9d4660;
+}
+
+.edit-btn:hover {
+    background: #ffc0d1;
+    transform: scale(1.04);
+}
+
+
+.remove-btn {
+    background: #ffe8ee;
+    color: #c94c6d;
+}
+
+.remove-btn:hover {
+    background: #ffcbd8;
+    transform: scale(1.04);
+}
+
+
+#habit-list,
+#add-habit,
+#edit-habit,
+#category-management,
+#reminders,
+#settings{
+    box-shadow: 10px 5px 10px  #a7395fe1;
+}
+
+input,
+select {
+    padding: 12px 14px;
+    border: 2px solid #f3bfd0;
+    border-radius: 10px;
+    background: white;
+    color: #633f4b;
+    font-family: inherit;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #e982a1;
+    box-shadow: 0 0 0 3px rgba(233, 130, 161, 0.15);
+}
+
+#habit-form input {
+    flex: 1;
+    min-width: 200px;
+}
+
+
+#habit-form button,
+#edit-habit-form button,
+#category-form button,
+#reminder-form button {
+    border: solid, rgb(255, 157, 185), 2px;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: #e87898;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+    transition: 0.2s ease;
+    box-shadow: 0 0 0 3px rgba(233, 130, 161, 0.15);
+}
+
+#habit-form button:hover,
+#edit-habit-form button:hover,
+#category-form button:hover,
+#reminder-form button:hover {
+    background: #b6254c;
+    transform: translateY(-3px);
+}
+
+
+#edit-habit {
+    max-width: 50%;
+    display: none;
+}
+
+
+#category-list {
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff0f5;
+    border: 1px solid #f4b7c8;
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.category-item button {
+    border: none;
+    background: #ffb3c7;
+    color: #8e4055;
+    border-radius: 8px;
+    padding: 5px 9px;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+}
+
+
+#reminder-list {
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px rgba(255, 147, 177, 0.173);
+}
+
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff1f5;
+    border: 1px solid #f4bdcd;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.reminder-item button {
+    border: none;
+    background: #ffb1c5;
+    color: #8d4054;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+}
+
+#settings{
+    margin-top: 50px;
+    max-width: 50%;
+    max-height: 250px;
+    text-align: center;
+}
+
+.set{
+    margin: -5px;
+}
+
+#clear-data {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: #e87898;
+    color: white;
+    cursor: url('../assets/cursor1.1.gif'), auto;
+    font-weight: bold;
+    box-shadow: 0 0 0 3px rgba(255, 147, 177, 0.173);
+}
+
+#clear-data:hover {
+    background: #d55779;
+}
+
+
+footer {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+}
+
+footer .cat, .cat2 {
+  width: 100px; 
+  height: auto;
+}
+
+p {
+  margin: 0; 
+}
+
+/* ___________________________ for mobile ___________________________ */
+@media (max-width: 600px) {
+
+header {
+    padding: 10px 10px;
+    margin: -20;
+}
+
+.ht {
+    font-weight: bolder;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    box-shadow: #c91554 0px 0px 8px;
+}
+
+h2{
+    width: 90%;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.go-back{
+    font-size: 10px;
+    padding: 5px;
+}
+
+main {
+    width: 94%;
+    font-size: 14px;
+}
+
+section {
+    padding: 10px;
+}
+
+#habit-list {
+    margin: 5px auto;
+    grid-template-columns: 1fr;
+}
+
+#filter-category {
+    width: 90%;
+    font-size: 12px;
+    padding: 8px;
+    margin: 10px auto;
+}
+
+#habit-form,
+#edit-habit-form,
+#category-form,
+#reminder-form {
+    flex-direction: column;
+}
+
+input,
+select {
+    width: 100%;
+}
+
+#habit-form button,
+#edit-habit-form button,
+#category-form button,
+#reminder-form button {
+    width: 100%;
+}
+
+.habit button {
+    width: auto;
+}
+
+.reminder-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+footer {
+    flex-direction: row;
+    gap: 10px;
+}
+}
+}
+
+
+/* ═══════════════════════════════════════════════
+   ═══════════════════════════════════════════════ */
+
+html[data-theme="black"],
+html[data-theme="black"] body {
+    background-color: #100b0f;
+    color: #e6d5dc;
+}
+
+html[data-theme="black"] body {
+    background-image: url("https://i.pinimg.com/736x/f6/42/d9/f642d980456db59db4e2f6fbadacb4b7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+html[data-theme="black"],
+html[data-theme="black"] body,
+html[data-theme="black"] section,
+html[data-theme="black"] .habit,
+html[data-theme="black"] .category-item,
+html[data-theme="black"] .reminder-item,
+html[data-theme="black"] input,
+html[data-theme="black"] select,
+html[data-theme="black"] button {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+html[data-theme="black"] { 
+#habit-list,
+#add-habit,
+#edit-habit,
+#category-management,
+#reminders,
+#settings{
+    box-shadow: 0 7px  #696969e1;}}
+
+/* ─────────────── HEADER ─────────────── */
+html[data-theme="black"] .ht {
+    color: #e4e4e4;
+    background: linear-gradient(180deg, #505050, #292929);
+    border: 4px solid #666;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .55);
+    text-shadow: 2px 2px 4px #111;
+}
+html[data-theme="black"] .ht:hover {
+    background: linear-gradient(180deg, #6b6b6b, #333);
+    color: #fff;
+    box-shadow: 5px 8px 18px rgba(0, 0, 0, .7);
+    transform: translateY(-3px);
+}
+/* ─────────────── BACK BUTTON ─────────────── */
+html[data-theme="black"] .go-back {
+    color: #c7c3c5;
+    filter: grayscale(1) brightness(.75);
+    text-shadow: 2px 2px 3px #111;
+}
+
+html[data-theme="black"] .go-back:hover {
+    color: #eee;
+    filter: grayscale(.4) brightness(1);
+}
+
+/* ─────────────── HABIT LIST TITLE ─────────────── */
+
+html[data-theme="black"] #habit-list h2 {
+    color: #e8e8e8;
+    background: linear-gradient(180deg, #575757, #303030, #575757);
+    border: 2px solid #696969;
+    box-shadow: 5px 5px  #535353;
+    text-shadow: 3px 2px 5px #111;
+}
+
+/* ─────────────── SECTIONS ─────────────── */
+
+html[data-theme="black"] section {
+    background: rgba(29, 27, 28, .94);
+    border: 2px solid #4d4c4d;
+    color: #ded9dc;
+    box-shadow: 6px 6px 0 #191819;
+}
+
+/* ─────────────── FILTER ─────────────── */
+
+html[data-theme="black"] #filter-category {
+    color: #ddd;
+    background: linear-gradient(180deg, #575757, #303030);
+    border: 2px solid #646464;
+    border-radius: 20px;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, .4);
+}
+
+html[data-theme="black"] #filter-category:focus {
+    border-color: #999;
+}
+
+/* ─────────────── HABIT CARDS ─────────────── */
+
+html[data-theme="black"] .habit {
+    background: linear-gradient(145deg, #3b393a, #242223);
+    border: 2px solid #5b595a;
+    color: #ddd8da;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+}
+
+html[data-theme="black"] .habit:hover {
+    background: linear-gradient(145deg, #454344, #292829);
+    border-color: #858285;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .65);
+    transform: translateY(-6px);
+}
+
+html[data-theme="black"] .habit h3 {
+    color: #e1dddf;
+    text-shadow: 2px 2px 3px #1a191a;
+}
+
+/* ─────────────── BADGES ─────────────── */
+
+html[data-theme="black"] .badge {
+    background: #555455;
+    color: #e8e8e8;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+}
+
+/* ─────────────── PROGRESS BAR ─────────────── */
+
+html[data-theme="black"] .progress {
+    background: #222122;
+}
+
+html[data-theme="black"] .progress-bar {
+    background: linear-gradient(90deg, #555, #aaa, #555);
+    box-shadow: 0 0 5px rgba(180, 180, 180, .25);
+}
+
+/* ─────────────── HABIT BUTTONS ─────────────── */
+
+html[data-theme="black"] .habit button {
+    color: #eee;
+    border: 1px solid #666;
+}
+
+/* Complete */
+
+html[data-theme="black"] .complete-btn {
+    background: linear-gradient(180deg, #666, #3b3b3b);
+    color: #eee;
+}
+
+html[data-theme="black"] .complete-btn:hover {
+    background: linear-gradient(180deg, #888, #555);
+    color: #fff;
+}
+
+/* Edit */
+
+html[data-theme="black"] .edit-btn {
+    background: #4b494a;
+    color: #ddd;
+}
+
+html[data-theme="black"] .edit-btn:hover {
+    background: #666;
+    color: #fff;
+}
+
+/* Remove */
+
+html[data-theme="black"] .remove-btn {
+    background: #3a3839;
+    color: #c9c5c7;
+}
+
+html[data-theme="black"] .remove-btn:hover {
+    background: #555;
+    color: #fff;
+}
+
+/* ─────────────── INPUTS / SELECTS ─────────────── */
+
+html[data-theme="black"] input,
+html[data-theme="black"] select {
+    color: #dedadd;
+    background: #252425;
+    border: 2px solid #646164;
+    border-radius: 10px;
+    outline: none;
+}
+
+html[data-theme="black"] input::placeholder {
+    color: #969194;
+}
+
+html[data-theme="black"] input:focus,
+html[data-theme="black"] select:focus {
+    border-color: #a6a3a5;
+    box-shadow: 0 0 0 3px rgba(160, 160, 160, .15);
+}
+
+html[data-theme="black"] option {
+    color: #ddd;
+    background: #1f1e1f;
+}
+
+/* ─────────────── FORM BUTTONS ─────────────── */
+
+html[data-theme="black"] #habit-form button,
+html[data-theme="black"] #edit-habit-form button,
+html[data-theme="black"] #category-form button,
+html[data-theme="black"] #reminder-form button {
+    background: linear-gradient(180deg, #575757, #303030, #575757);
+    border: 2px solid #616161;
+    color: #e0e0e0;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, .45);
+    text-shadow: 2px 2px 3px #222;
+}
+
+html[data-theme="black"] #habit-form button:hover,
+html[data-theme="black"] #edit-habit-form button:hover,
+html[data-theme="black"] #category-form button:hover,
+html[data-theme="black"] #reminder-form button:hover {
+    background: linear-gradient(180deg, #757575, #c7c7c7, #757575);
+    color: #333;
+    box-shadow: 4px 5px 12px rgba(0, 0, 0, .55);
+    transform: translateY(-3px);
+}
+
+/* ─────────────── CATEGORY ITEMS ─────────────── */
+
+html[data-theme="black"] .category-item {
+    background: #363536;
+    border: 1px solid #5b595a;
+    color: #ddd;
+    box-shadow: 2px 3px 7px rgba(0, 0, 0, .3);
+}
+
+html[data-theme="black"] .category-item button {
+    background: #555455;
+    color: #ddd;
+    border: 1px solid #666;
+}
+
+html[data-theme="black"] .category-item button:hover {
+    background: #777;
+    color: #fff;
+}
+
+/* ─────────────── REMINDERS ─────────────── */
+
+html[data-theme="black"] #reminder-list {
+    box-shadow: 0 0 0 3px rgba(120, 120, 120, .12);
+}
+
+html[data-theme="black"] .reminder-item {
+    background: #363536;
+    border: 1px solid #5b595a;
+    color: #ddd;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, .3);
+}
+
+html[data-theme="black"] .reminder-item button {
+    background: #555455;
+    color: #ddd;
+    border: 1px solid #666;
+}
+
+html[data-theme="black"] .reminder-item button:hover {
+    background: #777;
+    color: #fff;
+}
+
+/* ─────────────── SETTINGS ─────────────── */
+
+html[data-theme="black"] #settings {
+    background: #1d1b1c;
+    border: 2px solid #4d4c4d;
+    color: #ddd;
+    box-shadow: 5px 5px 0 #191819;
+}
+
+html[data-theme="black"] #clear-data {
+    background: linear-gradient(180deg, #575757, #303030);
+    border: 1px solid #666;
+    color: #eee;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, .4);
+}
+
+html[data-theme="black"] #clear-data:hover {
+    background: linear-gradient(180deg, #777, #444);
+    color: #fff;
+}
+
+/* ─────────────── FOOTER ─────────────── */
+
+html[data-theme="black"] footer {
+    color: #fdfdfd; 
+}
+
+html[data-theme="black"] footer .cat, .cat2{
+    content: url('https://poempuppy.neocities.org/resources/pixels/ysdmp7.gif');
+}
+
+/* ─────────────── MOBILE ─────────────── */
+
+@media (max-width: 600px) {
+
+    html[data-theme="black"] .ht {
+        background: linear-gradient(180deg, #505050, #292929);
+        border-color: #666;
+        color: #eee;
+        box-shadow: 0 0 8px #333;
+    }
+
+    html[data-theme="black"] #habit-list h2 {
+        background: linear-gradient(180deg, #505050, #292929);
+        color: #eee;
+    }
+
+    html[data-theme="black"] section {
+        background: rgba(29, 27, 28, .96);
+        border-color: #4d4c4d;
+        box-shadow: 4px 4px 0 #191819;
+    }
+
+    html[data-theme="black"] .habit {
+        background: linear-gradient(145deg, #3b393a, #242223);
+        border-color: #5b595a;
+    }
+
+    html[data-theme="black"] .category-item,
+    html[data-theme="black"] .reminder-item {
+        background: #363536;
+        border-color: #5b595a;
+    }
+
+    html[data-theme="black"] #settings {
+        background: #1d1b1c;
+        border-color: #4d4c4d;
+    }
+
+    html[data-theme="black"] input,
+    html[data-theme="black"] select {
+        background: #252425;
+        color: #dedadd;
+        border-color: #646164;
+    }
+
+    html[data-theme="black"] #habit-form button,
+    html[data-theme="black"] #edit-habit-form button,
+    html[data-theme="black"] #category-form button,
+    html[data-theme="black"] #reminder-form button {
+        background: linear-gradient(180deg, #575757, #303030, #575757);
+        color: #eee;
+    }
+}
+
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: max-content;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 225, 235, 0.95);
+    border: 3px solid #ffabc1;
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    box-shadow:5px 5px 0 #c96b87, 5px 8px 20px rgba(150, 50, 85, .2);
+    z-index: 1000;
+}
+
+/* sidebar buttons */
+
+#sidebar button {
+    width: 100%;
+    padding: 10px 6px;
+    border: 2px solid #f3a8bd;
+    border-radius: 13px;
+    background: linear-gradient(180deg,#f788b1,#ffdce7, #f788b1);
+    color: #a83f60;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 3px 3px 0 #d27a94;
+    transition: .2s ease;
+}
+
+#sidebar button:hover {
+    background: linear-gradient(180deg, #fc8aab, #fc5386,#fc8aab);
+    color: white;
+    transform: translateX(4px);
+}
+#adds {
+    max-width: max-content;
+    display: none;
+}
+
+#add-habit,
+#edit-habit,
+#category-management,
+#reminders,
+#settings {
+    display: none;
+}
+
+#add-habit.side-open,
+#edit-habit.side-open,
+#category-management.side-open,
+#reminders.side-open,
+#settings.side-open {
+    display: block;
+}
+
+#add-habit,
+#edit-habit,
+#category-management,
+#reminders,
+#settings {
+    position: fixed;
+    left: 185px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, .95);
+    border: 2px solid #f3bfd0;
+    border-radius: 25px;
+    box-shadow:
+        8px 8px 0 #c96b87,
+        0 10px 30px rgba(150, 50, 85, .2);
+}
+
+
+html[data-theme="black"] #sidebar {
+    background: rgba(30, 28, 29, .96);
+    border-color: #555;
+    box-shadow:
+        5px 5px 0 #111,
+        5px 8px 20px rgba(0, 0, 0, .7);
+}
+
+html[data-theme="black"] #sidebar button {
+    background: linear-gradient(
+        180deg,
+        #575757,
+        #303030
+    );
+    border-color: #666;
+    color: #eee;
+    box-shadow: 3px 3px 0 #111;
+}
+
+html[data-theme="black"] #sidebar button:hover {
+    background: linear-gradient(
+        180deg,
+        #777,
+        #444
+    );
+    color: white;
+}
+
+html[data-theme="black"] #add-habit.side-open,
+html[data-theme="black"] #edit-habit.side-open,
+html[data-theme="black"] #category-management.side-open,
+html[data-theme="black"] #reminders.side-open,
+html[data-theme="black"] #settings.side-open {
+    max-width: 100%;
+    background: rgba(29, 27, 28, .97);
+    border-color: #4d4c4d;
+    box-shadow:
+        6px 6px 0 #111,
+        0 10px 30px rgba(0, 0, 0, .6);
+}
+
+
+/* ═══════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════ */
+@media (max-width: 600px) {
+
+    #sidebar {
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 400px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 2px solid #ffabc1;
+        border-radius: 20px;
+        padding: 7px;
+        gap: 5px;
+    }
+
+    #sidebar button {
+        width: auto;
+        flex: 1 1 28%;
+        font-size: 10px;
+        padding: 8px 4px;
+    }
+
+    #add-habit,
+    #edit-habit,
+    #category-management,
+    #reminders,
+    #settings {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: none;
+        max-height: 75vh;
+    }
+}
