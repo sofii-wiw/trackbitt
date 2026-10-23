@@ -765,7 +765,11 @@ html[data-theme="black"] footer {
     color: #fdfdfd; 
 }
 
-html[data-theme="black"] footer .cat, .cat2{
+html[data-theme="black"] footer .cat{
+    content: url('https://poempuppy.neocities.org/resources/pixels/ysdmp7.gif');
+}
+
+html[data-theme="black"] footer .cat2{
     content: url('https://poempuppy.neocities.org/resources/pixels/ysdmp7.gif');
 }
 
